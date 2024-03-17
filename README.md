@@ -30,6 +30,14 @@ In the main GitHub repository, there is a main script termed ```train.py``` whic
 
 The correct way to call the main script script is something like this:
 
-```  python train.py -wp CS6910_assignment_1 -we sumanta_roy -d fashion_mnist -e 10 -b 32 -l cross_entropy -o adam -lr 0.001 -m 0.9 -beta 0.5 -beta1 0.9 -beta2 0.999 -eps 0.0001 -w_d 0.0005 -w_i glorot -nhl 3 -sz 128 -a relu
-```
+```!python train.py -wp CS6910_assignment_1 -we sumanta_roy -d fashion_mnist -e 10 -b 32 -l cross_entropy -o adam -lr 0.001 -m 0.9 -beta 0.5 -beta1 0.9 -beta2 0.999 -eps 0.0001 -w_d 0.0005 -w_i glorot -nhl 3 -sz 128 -a relu```
+
+So, this script basically trains the neural network and prints the validation accuracy and the testy accuracy on either the 'Fashion-MNIST' dataset or the 'MNIST' dataset, using a bunch of hyperparameters that we specify. Also, the training loss, validation loss, training accuracy, and validation accuracy with increasing steps are logged into WandB. 
+
+An example run (one of cross-entropy loss and the other for mean square loss) is shown in the ```main_command_line.ipynb``` notebook in this directory itself.
+
+All the other files are python scripts that I defined containing functions that are required for the neural network working and training. Let us go over them one by one:
+
+- ```activation_functions.py```: 
+
 
