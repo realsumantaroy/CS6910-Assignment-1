@@ -33,12 +33,18 @@ The correct way to call the main script script is something like this:
 
 `!python train.py -wp CS6910_assignment_1 -we sumanta_roy -d fashion_mnist -e 10 -b 32 -l cross_entropy -o adam -lr 0.001 -m 0.9 -beta 0.5 -beta1 0.9 -beta2 0.999 -eps 0.0001 -w_d 0.0005 -w_i glorot -nhl 3 -sz 128 -a ReLU`
 
-So, this script basically trains the neural network and prints the validation accuracy and the testy accuracy on either the 'Fashion-MNIST' dataset or the 'MNIST' dataset, using a bunch of hyperparameters that we specify. Also, the training loss, validation loss, training accuracy, and validation accuracy with increasing steps are logged into WandB. 
+This script trains the neural network and prints the validation accuracy and the test accuracy on either the 'Fashion-MNIST' dataset or the 'MNIST' dataset, using specified hyperparameters. Additionally, the training loss, validation loss, training accuracy, and validation accuracy with increasing steps are logged into WandB.
 
-An example run (one of cross-entropy loss and the other for mean square loss) is shown in the ```main_command_line.ipynb``` notebook in this directory itself.
+An example run (one with cross-entropy loss and the other with mean square loss) is shown in the `main_command_line.ipynb` notebook in this root directory.
 
-All the other files are python scripts that I defined containing functions that are required for the neural network working and training. Let us go over them one by one:
+All the other files are Python scripts that I defined containing functions required for the neural network's operation and training. Let's go over them one by one:
 
-- ```activation_functions.py```: 
+- `activation_functions.py`: This file contains the activation functions and their derivatives, which are called by the backpropagation, forward propagation, and other functions.
+- `backward_propagation.py`: This file contains the main function that performs backpropagation. The inputs include the type of loss function, network parameters, input data, labeled data, type of activation function, and the L2 weight decay parameter. The function returns a dictionary containing all the gradients of the loss function with respect to the weights and biases (parameters).
+- `forward_propagation.py`: This file contains the main function that performs forward propagation. The function takes the parameters of the network, input data, and type of activation function as inputs, and then returns a dictionary containing the values of the activated neurons for the entire network.
+- `initializers.py`: This file contains the initializers for the training process. Two functions are defined - the Glorot (Xavier) initialization and the random initialization.
+- `loss_functions.py`: As the name suggests, this file contains the loss functions (both the mean squared loss and the cross-entropy loss).
+- `support_functions.py`: This file contains various small functions used in numerous places within the gradient descent algorithm. For example, it includes the one-hot function (used to convert labeled data to one-hot arrays/matrices) and functions for adding, subtracting, multiplying, and dividing entries in a dictionary.
+- `updates.py`:
 
 
