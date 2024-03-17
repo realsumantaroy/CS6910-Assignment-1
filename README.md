@@ -1,7 +1,7 @@
 # CS6910-Assignment-1
 
 
-In the main Github repository, there is a main file termed ```train.py``` which takes arguments as directed byt he code specifications:
+In the main Github repository, there is a main file termed ```train.py``` which takes arguments as directed by the code specifications, as given below. The default parameters are that of Configuration 1 (in question number 10) and 
 
 ### Arguments to be supported
 
@@ -25,3 +25,5 @@ In the main Github repository, there is a main file termed ```train.py``` which 
 | `-nhl`, `--num_layers` | 1 | Number of hidden layers used in feedforward neural network. | 
 | `-sz`, `--hidden_size` | 4 | Number of hidden neurons in a feedforward layer. |
 | `-a`, `--activation` | sigmoid | choices:  ["identity", "sigmoid", "tanh", "ReLU"] |
+
+
