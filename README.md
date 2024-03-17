@@ -1,8 +1,9 @@
 # CS6910-Assignment-1
 
 This README file guides you through all the code present in this repository and provides instructions on how to implement it correctly.
+Also, link to my WandB project: https://wandb.ai/sumanta_roy/CS6910_assignment_1/reports/Sumanta-s-CS6910-Assignment-1--Vmlldzo3MTU4NTE5
 
-## Main Directory
+## Root Directory
 
 In the main GitHub repository, you will find a main script named `train.py`. This script accepts command-line arguments as directed by the code specifications outlined below. The default parameters are set to Configuration 1 (as described in question number 10), which yielded the best accuracy for the validation dataset of Fashion-MNIST.
 
@@ -45,6 +46,23 @@ All the other files are Python scripts that I defined containing functions requi
 - `initializers.py`: This file contains the initializers for the training process. Two functions are defined - the Glorot (Xavier) initialization and the random initialization.
 - `loss_functions.py`: As the name suggests, this file contains the loss functions (both the mean squared loss and the cross-entropy loss).
 - `support_functions.py`: This file contains various small functions used in numerous places within the gradient descent algorithm. For example, it includes the one-hot function (used to convert labeled data to one-hot arrays/matrices) and functions for adding, subtracting, multiplying, and dividing entries in a dictionary.
-- `updates.py`:
+- `updates.py`: This file contains the various update rules for the various gradient descent algorithms.
+- `gradient_descent_wandb.py`: This file contains various gradient descent algorithms (mini-batch/stochastic, Adam, Nadam, etc.). Each of these functions calls one of the functions present in the updates.py file.
+
+Now, let's move on to the individual folders containing solutions/answers to individual questions from the assignment. It's important to note that these are small code snippets (for example, a backpropagation code, a forward propagation code, etc.) that use a few functions from the above-defined scripts. Hence, the required Python scripts are called whenever needed. For each question 'x', please open the question_x.ipynb notebook in their respective directories to see the results and the main code.
+
+## Directory: Question 2
+
+This folder contains the notebook cs_6910_question_2.ipynb, where I've created a straightforward forward propagation code. The code is user-friendly and allows us to set the layer architecture (number of hidden layers and number of neurons in each hidden layer), as well as the option to initialize the weights and biases based on a random strategy or the Glorot/Xavier scheme. In this implementation, the forward propagation function takes parameters params, input data X, and an activation function act as inputs. The function calculates the activations for each layer of the neural network using a loop that iterates over the hidden layers. It computes the activations for each layer by applying the corresponding weight matrix Wi and bias vector bi to the previous layer's activations, followed by applying the specified activation function (sigmoid, tanh, or ReLU). The output of each layer is stored in the activations dictionary, which contains both the pre-activation (ai) and post-activation (hi) values. The nomenclature convention is based on Prof. Khapra's lecture notes.
+
+## Directory: Question 3
+
+This folder contains the notebook `cs6910_question_3.ipynb` that contains my implementation of the back-propagation of the feedforward neural network as well as all the gradient-descent algorithms as listed in the question. 
+
+## Directory: Question 4, 8, 10
+
+- Question 4: Bayesian hyperparameter tuning of the cross-entropy-based loss function on the Fashion-MNIST dataset. A sweep was run through the WandB interface.
+- Question 8: Bayesian hyperparameter tuning of the mean-squared loss function on the Fashion-MNIST dataset. A sweep was run through the WandB interface.
+- Question 10: The three best hyperparameter settings (from the sweep analysis on the Fashion-MNIST dataset) were used to train the model for the MNIST dataset.
 
 
