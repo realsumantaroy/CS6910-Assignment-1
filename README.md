@@ -1,11 +1,12 @@
 # CS6910-Assignment-1
 
-This README file guides you through all the codes that are present in this repository and the correct way to implement them. 
+This README file guides you through all the code present in this repository and provides instructions on how to implement it correctly.
 
-## Main directory
-In the main GitHub repository, there is a main script termed ```train.py``` which takes commandand line arguments as directed by the code specifications, as given below. The default parameters are that of Configuration 1 (in question number 10) which gave the best accuracy for the validation data set of Fashion-MNIST.
+## Main Directory
 
-** Arguments to be supported: **
+In the main GitHub repository, you will find a main script named `train.py`. This script accepts command-line arguments as directed by the code specifications outlined below. The default parameters are set to Configuration 1 (as described in question number 10), which yielded the best accuracy for the validation dataset of Fashion-MNIST.
+
+### Arguments to be supported:
 
 | Name | Default Value | Description |
 | :---: | :-------------: | :----------- |
